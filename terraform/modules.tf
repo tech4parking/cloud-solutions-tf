@@ -1,15 +1,15 @@
 module "identity_compliance_security" {
-  source = "./modules/identity-compliance-security"
+  source = "./modules/identity-compliance"
 
   ecs_website_service_name = var.ecs_website_service_name
   website_bucket_id        = module.storage.website_bucket_id
   website_bucket_name      = module.storage.website_bucket_name
   # cloudfront_oai_id = module.content_delivery.cloudfront_oai_id
-  cloudfront_logging_bucket_arn    = module.storage.cloudfront_logging_bucket_arn
+  # cloudfront_logging_bucket_arn    = module.storage.cloudfront_logging_bucket_arn
   load_balancer_logging_bucket_id  = module.storage.load_balancer_logging_bucket_id
   load_balancer_logging_bucket_arn = module.storage.load_balancer_logging_bucket_arn
 
-  cognito_stage_name = var.cognito_stage_name
+  cognito_stage_name   = var.cognito_stage_name
   cognito_service_name = var.cognito_service_name
 }
 
@@ -50,18 +50,17 @@ module "application" {
   cloudwatch_log_group_website_container_name = module.management_governance.cloudwatch_log_group_website_container_name
 }
 
-# module "content_delivery" {
-#   source = "./modules/content-delivery"
+module "content_delivery" {
+  source = "./modules/content-delivery"
 
-#   aws_region = var.aws_region
-#   website_load_balancer_dns_name                 = module.compute.website_load_balancer_dns_name
-#   acm_certificate_cert_arn                       = var.acm_certificate_cert_arn
-#   website_bucket_name                            = module.storage.website_bucket_name
-#   cloudfront_logging_bucket_regional_domain_name = module.storage.cloudfront_logging_bucket_regional_domain_name
-#   cloudfront_logging_bucket_name                 = module.storage.cloudfront_logging_bucket_name
-#   website_lb_zone_id                             = module.compute.website_lb_zone_id
-#   website_lb_id = module.compute.website_lb_id
-# }
+  aws_region = var.aws_region
+  website_load_balancer_dns_name                 = module.compute.website_load_balancer_dns_name
+  website_bucket_name                            = module.storage.website_bucket_name
+  # cloudfront_logging_bucket_regional_domain_name = module.storage.cloudfront_logging_bucket_regional_domain_name
+  # cloudfront_logging_bucket_name                 = module.storage.cloudfront_logging_bucket_name
+  website_lb_zone_id                             = module.compute.website_lb_zone_id
+  website_lb_id = module.compute.website_lb_id
+}
 
 module "storage" {
   source = "./modules/storage"
@@ -75,7 +74,9 @@ module "database" {
 }
 
 module "qrcode_lambda" {
-  source = "./services/lambda/qrcode"
+  source = "./modules/services/lambda/qrcode"
+
+  iam_role_lambda_exec_arn = module.identity_compliance_security.iam_role_lambda_exec_arn
 }
 
 module "website" {
