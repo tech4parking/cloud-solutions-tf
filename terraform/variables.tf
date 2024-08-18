@@ -33,14 +33,14 @@ variable "availability_zones" {
 # ECR & ECS
 variable "cognito_stage_name" {
   description = "Cognito stage name"
-  type = string
-  default = "production"
+  type        = string
+  default     = "production"
 }
 
 variable "cognito_service_name" {
   description = "Cognito service name"
-  type = string
-  default = "website-cognito"
+  type        = string
+  default     = "website-cognito"
 }
 
 # variable "autoscaling_instance_type" {

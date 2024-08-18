@@ -82,11 +82,11 @@ resource "aws_cloudfront_distribution" "tech4parking_distribution" {
     response_page_path = "/errors/403.html"
   }
 
-  logging_config {
-    bucket          = "${var.cloudfront_logging_bucket_regional_domain_name}"
-    include_cookies = false
-    prefix          = "cloudfront-logs/"
-  }
+  #logging_config {
+   # bucket          = "${var.cloudfront_logging_bucket_regional_domain_name}"
+   # include_cookies = false
+   # prefix          = "cloudfront-logs/"
+  #}
 
   viewer_certificate {
     acm_certificate_arn = aws_acm_certificate.cert.arn
