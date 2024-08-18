@@ -1,7 +1,7 @@
-resource "aws_cloudfront_distribution" "tech4parking_distribution" {
+resource "aws_cloudfront_distribution" "vagasaservice_distribution" {
   enabled         = true
   # is_ipv6_enabled = true
-  aliases = ["tech4parking.com.br"]
+  aliases = ["vagasaservice.com.br"]
   price_class     = "PriceClass_All"  # Adjust based on your needs
 
   origin {
@@ -102,6 +102,6 @@ resource "aws_cloudfront_distribution" "tech4parking_distribution" {
   }
 
   tags = {
-    Name = "tech4parking-cloudfront-distribution"
+    Name = "vagasaservice-cloudfront-distribution"
   }
 }

@@ -93,8 +93,8 @@ module "website" {
   acm_certificate_cert_arn       = module.content_delivery.acm_certificate_cert_arn
   route53_record_www_record_name = module.content_delivery.route53_record_www_record_name
 
-  tech4parking_website_ecs_cluster_id               = module.application.tech4parking_website_ecs_cluster_id
-  tech4parking_website_ecs_cluster_name             = module.application.tech4parking_website_ecs_cluster_name
+  vagasaservice_website_ecs_cluster_id               = module.application.vagasaservice_website_ecs_cluster_id
+  vagasaservice_website_ecs_cluster_name             = module.application.vagasaservice_website_ecs_cluster_name
   website_sg_id                                     = module.compute.website_sg_id
   cloudwatch_log_group_website_container_name       = module.management_governance.cloudwatch_log_group_website_container_name
   cloudwatch_log_group_website_task_definition_name = module.management_governance.cloudwatch_log_group_website_task_definition_name

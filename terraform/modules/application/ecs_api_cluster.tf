@@ -1,3 +1,3 @@
-resource "aws_ecs_cluster" "tech4parking_api_cluster" {
-  name = "tech4parking-api-cluster"
+resource "aws_ecs_cluster" "vagasaservice_api_cluster" {
+  name = "vagasaservice-api-cluster"
 }

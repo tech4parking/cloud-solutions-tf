@@ -1,4 +1,4 @@
-resource "aws_network_acl" "tech4parking_acl" {
+resource "aws_network_acl" "vagasaservice_acl" {
   vpc_id = aws_vpc.main.id
 
   ingress {
@@ -29,6 +29,6 @@ resource "aws_network_acl" "tech4parking_acl" {
   }
 
   tags = {
-    Name = "tech4parking-acl"
+    Name = "vagasaservice-acl"
   }
 }
