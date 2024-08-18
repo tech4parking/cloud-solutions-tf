@@ -1,3 +1,9 @@
+module "internet_of_things" {
+  source = "./modules/internet-of-things"
+
+  process_car_parking_lambda_arn = module.process_car_parking_lambda.process_car_parking_lambda_arn
+}
+
 module "identity_compliance_security" {
   source = "./modules/identity-compliance"
 
@@ -73,11 +79,11 @@ module "storage" {
 #  source = "./modules/database"
 #}
 
-#module "qrcode_lambda" {
- # source = "./modules/services/lambda/qrcode"
+module "process_car_parking_lambda" {
+  source = "./modules/services/lambda/process_car_parking"
 
-  #iam_role_lambda_exec_arn = module.identity_compliance_security.iam_role_lambda_exec_arn
-#}
+  iam_role_lambda_exec_arn = module.identity_compliance_security.iam_role_lambda_exec_arn
+}
 
 module "website" {
   source = "./modules/services/website"
