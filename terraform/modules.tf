@@ -69,9 +69,9 @@ module "storage" {
   environment = var.environment
 }
 
-module "database" {
-  source = "./modules/database"
-}
+#module "database" {
+#  source = "./modules/database"
+#}
 
 module "qrcode_lambda" {
   source = "./modules/services/lambda/qrcode"

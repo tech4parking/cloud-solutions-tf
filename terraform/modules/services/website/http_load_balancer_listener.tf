@@ -5,6 +5,7 @@ resource "aws_lb_listener" "website_listener_lb_http" {
 
   default_action {
     type = "forward"
+    target_group_arn = aws_lb_target_group.app_website_lb_target.arn
   }
   # default_action {
   #   type = "redirect"
