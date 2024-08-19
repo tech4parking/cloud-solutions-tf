@@ -1,7 +1,7 @@
-resource "aws_cloudfront_distribution" "vagasaservice_distribution" {
+resource "aws_cloudfront_distribution" "vagasasaservice_distribution" {
   enabled         = true
   # is_ipv6_enabled = true
-  aliases = ["vagasaservice.com.br"]
+  aliases = ["vagasasaservice.com.br"]
   price_class     = "PriceClass_All"  # Adjust based on your needs
 
   origin {
@@ -102,6 +102,6 @@ resource "aws_cloudfront_distribution" "vagasaservice_distribution" {
   }
 
   tags = {
-    Name = "vagasaservice-cloudfront-distribution"
+    Name = "vagasasaservice-cloudfront-distribution"
   }
 }

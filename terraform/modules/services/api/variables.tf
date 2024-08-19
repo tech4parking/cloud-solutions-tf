@@ -10,5 +10,5 @@ variable "ecs_public_service_sg_id" {}
 variable "cloudwatch_event_bus_name" {}
 variable "sns_topic_soil_metrics_notifications_arn" {}
 variable "sns_topic_weather_notifications_arn" {}
-variable "vagasaservice_microservices_ecs_cluster_id" {}
-variable "vagasaservice_microservices_ecs_cluster_name" {}
+variable "vagasasaservice_microservices_ecs_cluster_id" {}
+variable "vagasasaservice_microservices_ecs_cluster_name" {}

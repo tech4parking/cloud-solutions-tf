@@ -1,4 +1,4 @@
-resource "aws_ecs_cluster" "vagasaservice_website_cluster" {
+resource "aws_ecs_cluster" "vagasasaservice_website_cluster" {
   name = "${var.ecs_website_service_name}-cluster"
 
   setting {

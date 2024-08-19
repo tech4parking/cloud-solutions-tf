@@ -59,7 +59,7 @@ variable "key_name" {
 variable "bucket_name" {
   description = "The name of the S3 bucket"
   type        = string
-  default     = "vagasaservice-metrics-data-storage"
+  default     = "vagasasaservice-metrics-data-storage"
 }
 
 variable "environment" {
@@ -72,7 +72,7 @@ variable "environment" {
 variable "ecs_website_service_name" {
   description = "The ECS name"
   type        = string
-  default     = "vagasaservice-website"
+  default     = "vagasasaservice-website"
 }
 
 ## DELIVERY CONTENT - WEBSITE ##

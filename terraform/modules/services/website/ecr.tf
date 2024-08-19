@@ -1,5 +1,5 @@
-resource "aws_ecr_repository" "vagasaservice_website_repo" {
-  name = "vagasaservice-website-repo"
+resource "aws_ecr_repository" "vagasasaservice_website_repo" {
+  name = "vagasasaservice-website-repo"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
