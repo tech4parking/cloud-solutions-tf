@@ -9,7 +9,7 @@ resource "aws_lb_listener_rule" "website_lb_listener_rule" {
 
   condition {
     host_header {
-      values = ["vagasasaservice.com.br"]
+      values = ["vagasaservice.com.br"]
     }
   }
 }

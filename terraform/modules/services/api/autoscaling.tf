@@ -1,7 +1,7 @@
 resource "aws_appautoscaling_target" "farmer_target_autoscaling" {
   max_capacity       = 4
   min_capacity       = 1
-  resource_id        = "service/${var.vagasasaservice_microservices_ecs_cluster_name}/${aws_ecs_service.farmer_service.name}"
+  resource_id        = "service/${var.vagasaservice_microservices_ecs_cluster_name}/${aws_ecs_service.farmer_service.name}"
   scalable_dimension = "ecs:service:DesiredCount"
   service_namespace  = "ecs"
 }
